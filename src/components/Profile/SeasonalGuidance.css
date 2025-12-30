@@ -1,0 +1,83 @@
+.seasonal-guidance {
+    padding: var(--spacing-2xl);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.seasonal-header {
+    text-align: center;
+    padding: var(--spacing-2xl);
+    background: linear-gradient(135deg, var(--season-color), var(--primary));
+    color: white;
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.seasonal-header svg {
+    margin-bottom: var(--spacing-md);
+}
+
+.seasonal-header h2 {
+    margin: 0 0 var(--spacing-xs) 0;
+}
+
+.seasonal-header p {
+    margin: 0;
+    opacity: 0.9;
+}
+
+.guidance-sections {
+    display: grid;
+    gap: var(--spacing-xl);
+}
+
+.guidance-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-sm);
+}
+
+.guidance-card h3 {
+    margin: 0 0 var(--spacing-lg) 0;
+    color: var(--text-primary);
+}
+
+.guidance-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.guidance-card li {
+    padding: var(--spacing-sm) var(--spacing-md);
+    margin-bottom: var(--spacing-xs);
+    background: var(--bg-hover);
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--primary);
+}
+
+.food-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.food-tag {
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.food-tag.recommended {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--success);
+    border: 1px solid var(--success);
+}
+
+.food-tag.avoid {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--danger);
+    border: 1px solid var(--danger);
+}

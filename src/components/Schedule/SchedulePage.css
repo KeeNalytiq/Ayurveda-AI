@@ -1,0 +1,377 @@
+.schedule-page {
+    padding: var(--spacing-2xl);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.schedule-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.schedule-header h2 {
+    margin: 0 0 4px 0;
+}
+
+.schedule-header p {
+    margin: 0;
+    color: var(--text-secondary);
+}
+
+/* Adherence Badge */
+.adherence-badge {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.adherence-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: conic-gradient(var(--success) calc(var(--percentage) * 1%),
+            var(--bg-hover) 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.adherence-circle::before {
+    content: '';
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    background: var(--bg-card);
+    border-radius: 50%;
+}
+
+.adherence-circle span {
+    position: relative;
+    z-index: 1;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+.adherence-label {
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.adherence-sublabel {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* Date Selector */
+.date-selector {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.view-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition);
+    font-weight: 500;
+}
+
+.view-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.view-btn:hover:not(.active) {
+    border-color: var(--primary);
+    background: rgba(59, 130, 246, 0.05);
+}
+
+/* Calendar Week View */
+.calendar-week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.calendar-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    background: var(--bg-hover);
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.calendar-day:hover {
+    background: rgba(22, 163, 74, 0.1);
+    transform: translateY(-2px);
+}
+
+.calendar-day.today {
+    background: linear-gradient(135deg, var(--primary), var(--ayurveda-sage));
+    color: white;
+}
+
+.calendar-day.today .day-name,
+.calendar-day.today .day-number {
+    color: white;
+}
+
+.day-name {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.day-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.adherence-dot {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+}
+
+.adherence-dot.high {
+    background: rgba(16, 185, 129, 0.2);
+    color: var(--success);
+}
+
+.adherence-dot.medium {
+    background: rgba(217, 119, 6, 0.2);
+    color: var(--warning);
+}
+
+.adherence-dot.low {
+    background: rgba(239, 68, 68, 0.2);
+    color: var(--danger);
+}
+
+.calendar-day.today .adherence-dot {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+/* Timing Sections */
+.schedule-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.timing-section {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.timing-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--border);
+}
+
+.timing-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(16, 185, 129, 0.1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+}
+
+.timing-header h3 {
+    margin: 0;
+    flex: 1;
+}
+
+.medicine-count {
+    background: var(--primary);
+    color: white;
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* Medicines List */
+.medicines-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.no-medicines {
+    text-align: center;
+    color: var(--text-muted);
+    padding: var(--spacing-lg);
+    margin: 0;
+}
+
+.medicine-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    background: var(--bg-hover);
+    transition: all var(--transition);
+}
+
+.medicine-item.taken {
+    background: rgba(16, 185, 129, 0.1);
+    border-left: 3px solid var(--success);
+}
+
+.medicine-info {
+    flex: 1;
+}
+
+.medicine-name {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.medicine-details {
+    display: flex;
+    gap: var(--spacing-md);
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+}
+
+.dosage {
+    font-weight: 500;
+}
+
+.anupana {
+    color: var(--text-muted);
+}
+
+/* Check Button */
+.check-button {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--bg-hover);
+    border: 2px solid var(--border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.check-button:hover {
+    transform: scale(1.05);
+    border-color: var(--primary);
+}
+
+.check-button.checked {
+    background: linear-gradient(135deg, var(--success), var(--ayurveda-sage));
+    border-color: var(--success);
+    color: white;
+}
+
+.check-button.checked:hover {
+    background: linear-gradient(135deg, var(--ayurveda-sage), var(--success));
+}
+
+.status-text {
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* Dark theme for check buttons */
+[data-theme="dark"] .check-button {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .check-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--primary);
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: var(--spacing-2xl);
+    color: var(--text-muted);
+}
+
+.empty-icon {
+    opacity: 0.3;
+    margin-bottom: var(--spacing-lg);
+}
+
+.empty-state h3 {
+    margin: 0 0 var(--spacing-xs) 0;
+}
+
+.empty-state p {
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .schedule-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-md);
+    }
+
+    .adherence-badge {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .check-button .status-text {
+        display: none;
+    }
+
+    .check-button {
+        padding: var(--spacing-sm);
+    }
+}

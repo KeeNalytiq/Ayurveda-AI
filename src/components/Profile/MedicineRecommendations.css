@@ -1,0 +1,178 @@
+.medicine-recommendations {
+    padding: var(--spacing-2xl);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.recommendations-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-2xl);
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.recommendations-header h2 {
+    margin: 0 0 4px 0;
+}
+
+.recommendations-header p {
+    margin: 0;
+    color: var(--text-secondary);
+}
+
+.match-score-legend {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+/* Recommendations Grid */
+.recommendations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.recommendation-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border);
+    transition: all var(--transition);
+    position: relative;
+}
+
+.recommendation-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+/* Match Badge */
+.match-badge {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    background: linear-gradient(135deg, #f59e0b, #eab308);
+    color: white;
+    padding: 4px var(--spacing-sm);
+    border-radius: var(--radius-md);
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Header */
+.recommendation-header {
+    margin-bottom: var(--spacing-md);
+    padding-right: 80px;
+}
+
+.recommendation-header h3 {
+    margin: 0 0 var(--spacing-xs) 0;
+    color: var(--text-primary);
+    font-size: 1.25rem;
+}
+
+.category-badge {
+    display: inline-block;
+    padding: 2px var(--spacing-sm);
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--primary);
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.formulation-description {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin: 0 0 var(--spacing-lg) 0;
+    line-height: 1.6;
+}
+
+/* Dosage Info */
+.dosage-info {
+    background: var(--bg-hover);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--spacing-xs) 0;
+    font-size: 0.875rem;
+}
+
+.info-item .label {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.info-item .value {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* Reasoning */
+.recommendation-reasoning {
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background: rgba(59, 130, 246, 0.05);
+    border-left: 3px solid var(--primary);
+    border-radius: var(--radius-sm);
+}
+
+.recommendation-reasoning strong {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-primary);
+    font-size: 0.875rem;
+}
+
+.recommendation-reasoning p {
+    margin: 0;
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* Empty State */
+.recommendations-empty,
+.recommendations-loading {
+    text-align: center;
+    padding: var(--spacing-2xl);
+    color: var(--text-muted);
+}
+
+.empty-icon {
+    opacity: 0.3;
+    margin-bottom: var(--spacing-lg);
+}
+
+.recommendations-empty h3 {
+    margin: 0 0 var(--spacing-xs) 0;
+}
+
+.recommendations-empty p {
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .recommendations-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .recommendation-header {
+        padding-right: 70px;
+    }
+}

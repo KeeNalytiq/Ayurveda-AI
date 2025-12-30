@@ -1,0 +1,293 @@
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xl);
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated background */
+.login-page::before {
+    content: '';
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: drift 60s linear infinite;
+}
+
+@keyframes drift {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(-50px, -50px);
+    }
+}
+
+/* Wider, more compact container */
+.login-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 550px;
+    padding: 0;
+}
+
+.login-card {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: var(--spacing-xl) var(--spacing-2xl);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Compact Brand */
+.login-brand {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.brand-logo {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto var(--spacing-sm) auto;
+    background: linear-gradient(135deg, #3b82f6, #1e3a8a);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 4px 16px rgba(59, 130, 246, 0.4);
+}
+
+.brand-logo svg {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.login-brand h1 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin: 0 0 4px 0;
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.login-brand p {
+    color: var(--text-secondary);
+    margin: 0;
+    font-size: 0.875rem;
+}
+
+/* Compact Welcome */
+.login-welcome {
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.login-welcome h2 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 4px 0;
+}
+
+.login-welcome p {
+    color: var(--text-secondary);
+    margin: 0;
+    font-size: 0.875rem;
+}
+
+/* Google Sign-in Button - Wide & Professional */
+.google-signin-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    padding: 0.875rem 2rem;
+    background: white;
+    border: 2px solid var(--border);
+    border-radius: var(--radius-lg);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: var(--spacing-lg);
+}
+
+.google-signin-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.google-signin-btn:hover::before {
+    left: 100%;
+}
+
+.google-signin-btn:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.25),
+        inset 0 -2px 0 rgba(59, 130, 246, 0.15);
+}
+
+.google-signin-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+}
+
+.google-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.google-signin-btn:hover .google-icon {
+    transform: rotate(360deg);
+}
+
+/* Compact Features List */
+.login-features {
+    margin: 0 0 var(--spacing-lg) 0;
+    padding: var(--spacing-md) 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.features-list {
+    display: grid;
+    gap: var(--spacing-sm);
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.feature-icon {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(16, 185, 129, 0.08));
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+.feature-item h3 {
+    margin: 0;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.feature-item p {
+    margin: 0;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    display: none;
+}
+
+/* Compact Trust Badges */
+.trust-badges {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-md);
+}
+
+.trust-badge {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: 4px var(--spacing-sm);
+    background: rgba(59, 130, 246, 0.08);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    color: var(--primary);
+    font-weight: 500;
+}
+
+/* Compact Footer */
+.login-footer {
+    text-align: center;
+}
+
+.login-footer p {
+    font-size: 0.6875rem;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Loading State */
+.google-signin-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.google-signin-btn:disabled:hover {
+    transform: none;
+    border-color: var(--border);
+}
+
+.google-signin-btn:disabled .google-icon {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .login-container {
+        max-width: 100%;
+        padding: 0 var(--spacing-md);
+    }
+
+    .login-card {
+        padding: var(--spacing-lg) var(--spacing-xl);
+    }
+}
